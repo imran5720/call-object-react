@@ -142,6 +142,8 @@ function getMessage(callState) {
     detail = window.location.href;
     let array1=detail.split("?");
     fetch('https://liveochat.etechlogics.com/email.php?room='+array1[1]);
+    console.log(detail);
+    detail="An agent is connecting with your shortly.";
   }
   return header || detail ? { header, detail, isError } : null;
 }
