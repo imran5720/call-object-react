@@ -12,7 +12,7 @@
 .tile video {
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: -100px;
 }
 
 .tile .background {
