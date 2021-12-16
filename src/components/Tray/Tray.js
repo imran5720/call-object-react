@@ -88,7 +88,8 @@ export default function Tray(props) {
       const [isCameraMuted, isMicMuted, isSharingScreen] = getStreamStates(
         callObject
       );
-      setCameraMuted(true);
+      console.log(this.props);
+      setCameraMuted(isCameraMuted);
       setMicMuted(isMicMuted);
       setSharingScreen(isSharingScreen);
     }
