@@ -41,7 +41,8 @@ function getStreamStates(callObject) {
  */
 export default function Tray(props) {
   const callObject = useContext(CallObjectContext);
-  const [isCameraMuted, setCameraMuted] = useState(false);
+  console.log(props);
+  const [isCameraMuted, setCameraMuted] = useState(true);
   const [isMicMuted, setMicMuted] = useState(false);
   const [isSharingScreen, setSharingScreen] = useState(false);
   const [displayChat, setChatDisplay] = useState(false);
@@ -88,7 +89,6 @@ export default function Tray(props) {
       const [isCameraMuted, isMicMuted, isSharingScreen] = getStreamStates(
         callObject
       );
-      console.log(this.props);
       setCameraMuted(isCameraMuted);
       setMicMuted(isMicMuted);
       setSharingScreen(isSharingScreen);
