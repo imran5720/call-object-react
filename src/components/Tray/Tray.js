@@ -88,7 +88,7 @@ export default function Tray(props) {
       const [isCameraMuted, isMicMuted, isSharingScreen] = getStreamStates(
         callObject
       );
-      setCameraMuted(isCameraMuted);
+      setCameraMuted(true);
       setMicMuted(isMicMuted);
       setSharingScreen(isSharingScreen);
     }
@@ -119,21 +119,7 @@ export default function Tray(props) {
         highlighted={isMicMuted}
         onClick={toggleMic}
       />
-      {DailyIframe.supportedBrowser().supportsScreenShare && (
-        <TrayButton
-          type={TYPE_SCREEN}
-          disabled={props.disabled}
-          highlighted={isSharingScreen}
-          onClick={toggleSharingScreen}
-        />
-      )}
-      <TrayButton
-        type={TYPE_CHAT}
-        disabled={props.disabled}
-        highlighted={highlightedChat}
-        onClick={toggleChat}
-      />
-      <Chat onClickDisplay={displayChat} notification={handleNewChat} />
+
       <TrayButton
         type={TYPE_LEAVE}
         disabled={props.disabled}
