@@ -107,12 +107,7 @@ export default function Tray(props) {
 
   return (
     <div className="tray">
-      <TrayButton
-        type={TYPE_MUTE_CAMERA}
-        disabled={props.disabled}
-        highlighted={isCameraMuted}
-        onClick={toggleCamera}
-      />
+      
       <TrayButton
         type={TYPE_MUTE_MIC}
         disabled={props.disabled}
