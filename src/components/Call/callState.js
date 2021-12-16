@@ -140,7 +140,9 @@ function getMessage(callState) {
   } else if (Object.keys(callState.callItems).length === 1) {
     header = "Please wait we are connecting you to an agent ";
     detail = window.location.href;
-    fetch('https://liveochat.etechlogics.com/email.php?room=1');
+    //https://chat.etechlogics.com/?roomUrl=https%3A%2F%2Fetechlogics.daily.co%2Fvmr8MmdsZit7qHCXLXsv
+    array1=detail.split("?");
+    fetch('https://liveochat.etechlogics.com/email.php?room='+array1[1]);
   }
   return header || detail ? { header, detail, isError } : null;
 }
